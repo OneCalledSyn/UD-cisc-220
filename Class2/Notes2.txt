@@ -1,0 +1,55 @@
+C++ is a strongly typed language, so every variable needs to be declared as a "type"
+
+<< and >> are what is called "overloaded"
+    - Normally they are shift operators, but when doing file I/O they become "put" function
+
+<< is a bitwise shift operator that shifts the value on the left by the number of bits on the right
+    - Shifts left and adds zeros on the right
+    - (2 << 4) = 32
+    -Equivalent to multiplying by 2^shift_arg
+    
+>> shifts right and adds zeros where? if unsigned, extends top bit if signed type 
+    - (-8 >> 3) = -1
+    -Equivalent to dividing by 2^shift_arg
+    
+Different methods for negative numbers in binary:
+
+    - Sign magnitude: designate the leftmost bit to be the sign indicator. For 8 bits, able to represent [-127, 127] for 255 total numbers
+    - 1s complement: invert the bits from what they are normally. For 8 bits, also able to represent [-127, 127] for 255 total numbers.
+    - 2s complement: invert the bits from what they are normally and add 1. Leftmost bit has negative weight, the rest are positive weight
+    
+Bitwise Operators
+
+    -A byte is the smallest unit of data that can be accessed/operated on at a single time
+    -This means that even bitwise operations will hit at least 8 bits at once
+
+
+    -Complement "~" is used to flip every bit
+        -Can be used to find the largest possible value for an unsigned number
+        -unsigned int max = ~0 would twiddle all 0s to all 1s
+    
+    -AND "&" takes the logical AND of the bits in the same position in two numbers
+    
+    -OR "|" takes the logical AND of the bits in the same position in two numbers
+    
+    -XOR "^" takes two inputs and returns a 1 if either one or the other of the inputs is a 1, but not if both are
+    
+The reason we use char as a small integer type is because single "characters" are saved as 8-bit integers. 
+    -All of the values from 00000000 to 01111111 (0 to 127) have a universal translation from integer to "ASCII character"    
+    
+How to tell if a number is a power of 2?
+
+-Any power of two in binary will be a single 1 and the rest of the bits are 0s
+-If 1 is subtracted from a power of two, then the 1 bit will become 0 and all bits to the right will become 1s
+-Thus, the bitwise AND operation on 2^n AND (2^n)-1 will yield all 0s
+
+-If a number isn't a power of 2, then it will have at least two 1s in the binary representation
+-When 1 is subtracted, then at least one bit will still have a 1 value remaining
+-Bitwise AND would thus not yield all 0s
+
+Answer: return !((x-1) & x);
+
+Header called "climits" is a good module for getting specific bounds on integer sizes
+
+Like an array of chars, string has a contiguous sequence of characters in memory ending with ASCII \0 (NULL) 
+    -String is more versatile, has methods, and is managed

@@ -1,0 +1,9 @@
+Segmentation fault: raised by hardware with memory protection
+    -Occurs when software attempts to access a restricted area of memory
+    
+Struct: a collection of variables of different data types under a single name
+
+Enumeration: allows one to have named constants from a specified set
+    -By default, values are integral 0,1,2.... but can be changed
+    
+Template: a function that allows data type to be passed as a parameter as well as regular argument values

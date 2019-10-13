@@ -1,0 +1,3 @@
+GNU make is a tool used to help automate the build process
+    -As projects increase in size, so do compiling costs
+    -By using objectfiles and only compiling parts that changed, able to reduce these costs

@@ -1,0 +1,8 @@
+Dynamic arrays allow as much space as needed but are contiguous in memory
+
+To fill an array of n things: If we start with 1 item in our array, the next time we double we'll move 2 things, 
+    then 4, then 8 etc.  So if eventually n is 2k, then we moved:
+        1+2+⋯+2k−1=2k−1=n−1
+
+Valgrind is a great tool for checking memory leaks in C/C++
+

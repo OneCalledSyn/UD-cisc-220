@@ -1,0 +1,29 @@
+"A man always has two reasons for doing anything: a good reason and the real reason." -JP Morgan
+
+Thinking about a program from the end result to the details is called "top-down"
+
+Piecing together smaller systems to generate a big picture in the end is "bottom-up"
+
+Computers are not great at randomness inherently, must set a new seed every time with srand() or else rand() will repeat 
+
+Different ways to test for primality:
+
+    -Simplest way is to divide a number n by every integer lower than itself
+    -More refined method is to divide n by every integer up to sqrt(n)
+    
+    -The Miller-Rabin primality test uses the results of Euclid's lemma and Fermat's little theorem to
+    -Cannot prove primality though, only suggests strong probable primes
+    
+- There is a flag in C++ called "-std=c++11" which sets the specific standard of C++ that will run
+
+Complexity Theory
+
+    -Simplest way to think: How much does doubling the size of the program change the runtime?
+        -Little to no change: Probably log time or constant time
+        -Doubles in runtime: Probably linear time
+        -Quadruples in runtime: Probably quadratic time
+        
+Deterministic Algorithm: A given input will always produce the same exact output, and go through the same states each time
+
+Heuristic Algorithm: Look for solutions among the possible ones, but does not try to catch all of themo
+    -Often used to increase speed and decrease accuracy

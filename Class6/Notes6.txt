@@ -1,0 +1,1 @@
+In C++ methods and functions can be overloaded, as long as they accept different inputs or have different outputs

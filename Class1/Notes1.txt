@@ -1,0 +1,22 @@
+"-o" flag in Linux signifies "Output(with argument)". Used when a program needs to specify an output file or device by name on the command line  
+
+"-m" flag in Linux signifies "Message(with argument)". Passes argument as a string for an announcement or logging purpose.
+
+Commands that start with "#" are known as preprocessor directives
+    -Provides the ability for inclusion of header files, macro expansions, conditional compilation, and line control
+
+Preprocessing is defined by the first 4 of 8 "Phases of translation"
+    -Phase 1: Trigraph replacement
+        -Trigraph sequences are replaced by the characters which they represent
+    -Phase 2: Line splicing
+        -Physical source lines that are contined with escaped newline sequences are spliced to form logical lines
+    -Phase 3: Tokenization
+        -Preprocessor breaks the result into preprocessing tokens and whitespace, and replaces comments with whitespace
+    -Phase 4: Macro expansion and directive handling
+        -Preprocessing directives (file inclusion, conditional compilation) are executed and macros are expanded
+
+Header files are what allow programs in C++ to exist in multiple files; define interface for functions and classes to use        
+
+When a program is compiled, objectFiles (ending in *.o) are created to be linked together in the final executable
+
+Whenever a main function exists, it will be what gets executed when the program runs

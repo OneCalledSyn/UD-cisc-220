@@ -1,0 +1,76 @@
+Understanding "*" and "&" in declarations and expressions
+
+    - * in a declaration: "type *variable_name " declares "variable_name" as a pointer to a type
+        -A pointer is just an address (huge number encoding what the CPU needs to find location) of some data stored in memory
+        
+    - * in an expression: a unary operator which reads as "contents at"
+        -Unary operators perform an action on a single operand, ex. ++
+        - " *variable_name" would be replaced by the value stored at that address
+        -Called the "deference operator" since it undoes a reference into a value
+        
+    - & in a declaration: "type &variable_name" declares a reference to a type    
+        -A reference acts like a copy/alias of what it refers to, but does not copy the data to a new location
+        
+    - & in an expression: "&" is a unary operator which reads as "address of"
+        - "&variable_name" will be evaluated as the memory address where variable_name is stored
+        
+-Pointer and pointee are separate, make sure to set up pointee
+-Dereference a pointer to access its pointee
+-Assignment between pointers makes them point to the same pointee
+
+Uses of pointers and references
+
+    -Working with large amounts of data without having to copy it
+    -Request memory for an arbitrary size of data
+    -Build data structures without needing huge chunks of contiguous memory
+    -Interpret the bits at an address in different ways
+    -Have several different objects work on the same data source
+    -Functional programming becomes possible
+
+Pass by reference
+    -Memory address of the variable is passed to the function
+    -Useful when a function should return two or more values
+    
+Pass by value
+    -Value of function parameter is copied into another location in memory
+    -When accessing or modifying the variable within the function, only the copy is touched
+    -Useful when a function should only return one value
+    
+Pointer Arithmetic
+    -Logical addition, NOT numeric addition
+    -Adding one to a pointer means "produce a pointer to the object that is next in memory"
+        -Compiler will automatically scale increment by size of object being pointed at
+            -Prevents a pointer from being in the middle of an object or being misaligned
+
+Asking for Memory Chunks
+
+    -Older method: Using "malloc" and its counterpart "free"
+    -Recent method: Using "new" and its counterpart "delete"
+        -Safer than older method
+    -If you allocate memory, you must deallocate it after it is used or memory leak can occur
+    
+Malloc() vs new
+
+    -new is an operator, malloc() is a library function
+    -Both allocate contiguous memory chunks, but new also calls constructor for object initialization
+    -Return type for new is the data type given, malloc() return is void*
+    -new is faster, operator is always faster than a function
+    
+Heap vs Stack
+
+    -Deciding where to put variables is a matter of the lifespan of the variable
+    -Stack:
+        -For local variables inside a function
+        -Stored directly to the memory (RAM), access is faster than heap
+        -Static memory allocation
+        -Goes away when the function is returned from
+        -Stores data about the active subroutines of a computer program
+        -Always reserved/freed in a "Last In, First Out" order
+        -Good for when amount of data to allocate pre-compile is known
+    -Heap:
+        -For variables that must outlast the function that declared it
+        -Memory allocated at runtime, access is slower than stack
+        -Dynamic memory allocation
+        -Heap elements have no dependencies to each other, can be accessed randomly whenever
+        -Blocks can be reserved or freed at any time
+        -Good if unknown how much data to allocate at runtime
